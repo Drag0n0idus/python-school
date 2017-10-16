@@ -1,0 +1,18 @@
+{% from "macros/fields.tmpl" import render_input_field, render_submit, render_checkbox_field %}
+{% extends "shared/layout.tmpl" %}
+
+{% block title %}Prihlaseni{% endblock %}
+
+{% block content %}
+  <h3>Prihlaseni</h3>
+  <div class="form-group">Zadejte jmeno, prijmeni, datum narozeni a pohlavi.</div>
+  <form method="POST" id='insert-form'>
+    {{ form.hidden_tag() }}
+    {{ render_input_field(form.jmeno) }}
+    {{ render_input_field(form.prijmeni) }}
+    {{ render_input_field(form.vek) }}
+    {{ render_checkbox_field(form.muz) }}
+    {{ render_checkbox_field(form.zena) }}
+    {{ render_submit() }}
+  </form>
+{% endblock %}
